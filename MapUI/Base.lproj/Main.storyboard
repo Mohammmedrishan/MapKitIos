@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MapUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tSD-vd-zhc">
+                                <rect key="frame" x="0.0" y="78" width="414" height="784"/>
+                            </mapView>
+                            <navigationBar contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="AOz-oz-CSh">
+                                <rect key="frame" x="0.0" y="34" width="414" height="44"/>
+                                <items>
+                                    <navigationItem id="ZNR-Xj-oSg">
+                                        <nil key="title"/>
+                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="UCu-kM-m2w">
+                                            <rect key="frame" x="95" y="5.5" width="224" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Map"/>
+                                                <segment title="Hybrid"/>
+                                                <segment title="Satalite"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="mapTypeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="OLT-jE-knJ"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="tSD-vd-zhc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4rF-kH-xd7"/>
+                            <constraint firstItem="tSD-vd-zhc" firstAttribute="top" secondItem="AOz-oz-CSh" secondAttribute="bottom" id="Zw1-Xm-Cww"/>
+                            <constraint firstItem="tSD-vd-zhc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="bGd-It-IT7"/>
+                            <constraint firstItem="AOz-oz-CSh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="btw-aD-9II"/>
+                            <constraint firstItem="tSD-vd-zhc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mt3-OH-hfc"/>
+                            <constraint firstItem="AOz-oz-CSh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="34" id="rVU-kX-LBE"/>
+                            <constraint firstItem="AOz-oz-CSh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zK2-1h-ABp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapCtrl" destination="UCu-kM-m2w" id="smk-II-9fM"/>
+                        <outlet property="mapV" destination="tSD-vd-zhc" id="Z47-3l-msX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
+        </scene>
+    </scenes>
+</document>
